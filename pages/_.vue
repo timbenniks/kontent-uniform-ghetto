@@ -3,6 +3,7 @@
     <p><a href="/">Homepage</a></p>
     <p><a href="/developers">Developers page</a></p>
     <p><a href="/marketers">Marketers page</a></p>
+
     <component
       :is="mapComponentName(component.system.type)"
       v-for="component in pageComponents"
@@ -24,7 +25,7 @@ export default {
       .items('page')
       .type('page')
       .depthParameter(3)
-      .equalsFilter('elements.slug', slug)
+      .equalsFilter('elements.slug', slug.replace('/', ''))
       .toPromise()
 
     return { pageComponents: page.items[0].page_components.value }

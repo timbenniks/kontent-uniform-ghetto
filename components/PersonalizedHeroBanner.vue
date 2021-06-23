@@ -28,8 +28,8 @@ export default {
           intents: {},
         }
         return {
-          title: variant.title.value,
-          description: variant.description.value,
+          title: variant.title,
+          description: variant.description,
           intentTag: { ...intentTags },
         }
       })
